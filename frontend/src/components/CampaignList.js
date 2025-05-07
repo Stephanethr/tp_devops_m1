@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+const API_URL = "http://13.53.190.136:5000";
+
 function CampaignList() {
   const [campaigns, setCampaigns] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -8,7 +10,7 @@ function CampaignList() {
   useEffect(() => {
     const fetchCampaigns = async () => {
       try {
-        const response = await axios.get('/api/campaigns');
+        const response = await axios.get(`${API_URL}/api/campaigns`);
         setCampaigns(response.data);
         setLoading(false);
       } catch (error) {

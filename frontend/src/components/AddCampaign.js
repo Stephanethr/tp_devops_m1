@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
+const API_URL = "http://13.53.190.136:5000";
+
 function AddCampaign() {
   const [formData, setFormData] = useState({
     name: '',
@@ -20,7 +22,7 @@ function AddCampaign() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('/api/campaigns', formData);
+      await axios.post(`${API_URL}/api/campaigns`, formData);
       alert('Campagne ajoutée avec succès!');
       setFormData({
         name: '',
