@@ -1,0 +1,7 @@
+﻿server:
+  persistentVolume:
+    size: 10Gi
+  retention: 15d
+
+alertmanager:
+  enabled: true

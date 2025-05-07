@@ -1,0 +1,18 @@
+﻿apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: adcampaign-monitor
+  namespace: monitoring
+  labels:
+    app: adcampaign
+spec:
+  selector:
+    matchLabels:
+      app: backend
+  namespaceSelector:
+    matchNames:
+      - adcampaign
+  endpoints:
+  - port: http
+    path: /metrics
+    interval: 15s
