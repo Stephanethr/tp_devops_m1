@@ -35,6 +35,19 @@ Ce projet est un TP pour le cours de DevOps en M1. Il a pour objectif de mettre 
    http://localhost:3000
    ```
 
+## Fonctionnalités
+- Intégration continue avec des pipelines automatisés.
+- Déploiement continu sur un environnement de test.
+- Conteneurisation avec Docker.
+- Tests unitaires et d'intégration.
+
+## Technologies utilisées
+- **Langage** : JavaScript/TypeScript
+- **Framework** : Node.js
+- **CI/CD** : GitHub Actions
+- **Conteneurisation** : Docker
+- **Gestion des dépendances** : npm
+
 ## Tests
 Pour exécuter les tests, utilisez la commande suivante :
 ```bash
@@ -57,6 +70,11 @@ Les contributions sont les bienvenues ! Suivez les étapes ci-dessous pour contr
    git push origin ma-branche
    ```
 5. Créez une Pull Request sur le dépôt principal.
+
+## Contacts
+Pour toute question ou suggestion, contactez-nous à :
+- **Email** : devops_support@example.com
+- **GitHub** : [votre-utilisateur](https://github.com/votre-utilisateur)
 
 ## Licence
 Ce projet est sous licence MIT. Consultez le fichier `LICENSE` pour plus d'informations.
