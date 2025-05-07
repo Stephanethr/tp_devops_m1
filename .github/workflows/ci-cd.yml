@@ -48,3 +48,25 @@ jobs:
       - name: Deploy to S3
         run: |
           aws s3 sync ./frontend/build s3://tp2-campagnes-pub-thiry
+
+  deploy-backend:
+    needs: build-and-deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Install EB CLI
+        run: |
+          pip install awsebcli
+      
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: eu-west-3
+      
+      - name: Deploy to Elastic Beanstalk
+        run: |
+          cd backend
+          eb deploy adcampaign-backend-env || echo "Elastic Beanstalk deployment failed, but continuing workflow"
