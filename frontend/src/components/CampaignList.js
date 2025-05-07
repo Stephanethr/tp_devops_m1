@@ -13,6 +13,7 @@ function CampaignList() {
         console.log("test update")
         const response = await axios.get(`${API_URL}/api/campaigns`);
         setCampaigns(response.data);
+        console.log("data", response.data);
         setLoading(false);
       } catch (error) {
         console.error('Error fetching campaigns:', error);
