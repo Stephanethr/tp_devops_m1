@@ -10,6 +10,7 @@ function CampaignList() {
   useEffect(() => {
     const fetchCampaigns = async () => {
       try {
+        console.log("test update")
         const response = await axios.get(`${API_URL}/api/campaigns`);
         setCampaigns(response.data);
         setLoading(false);

@@ -6,7 +6,12 @@ const helmet = require('helmet');
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+    origin: ['http://tp2-campagnes-pub-thiry.s3-website.eu-north-1.amazonaws.com', 'http://localhost:3000'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true,
+    allowedHeaders: ['Content-Type', 'Authorization']
+  }));
 app.use(helmet());
 app.use(express.json());
 
