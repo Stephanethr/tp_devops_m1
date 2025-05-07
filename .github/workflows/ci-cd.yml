@@ -47,4 +47,4 @@ jobs:
       
       - name: Deploy to S3
         run: |
-          aws s3 sync ./frontend/build s3://tp2-campagnes-pub-thiry --acl public-read
+          aws s3 sync ./frontend/build s3://tp2-campagnes-pub-thiry
